@@ -1,51 +1,140 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
+
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laura Bertin | Data Analyst</title>
+
     <link rel="stylesheet" href="style.css">
-    <title>Laura Bertin - Data Analyst</title>
+
+    <!-- Police Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
-<script src="script.js"></script>
+
 <body>
-Étape 3 : Remplacer le contenu
 
-Remplace le contenu du <body> par :
-
-<header>
-    <h1>Laura Bertin</h1>
-    <p>Data Analyst</p>
-
-    <a href="#projets">Mes projets</a>
-</header>
-
-<section id="apropos">
-    <h2>À propos</h2>
-
-    <p>
-        Passionnée par l'analyse de données, je transforme les données en
-        informations utiles grâce à Python, SQL et Power BI.
-    </p>
-</section>
-
-<section id="competences">
-    <h2>Compétences</h2>
+<nav>
+    <div class="logo">Laura Bertin</div>
 
     <ul>
-        <li>Python</li>
-        <li>SQL</li>
-        <li>SQLite</li>
-        <li>Power BI</li>
+        <li><a href="#about">À propos</a></li>
+        <li><a href="#skills">Compétences</a></li>
+        <li><a href="#projects">Projets</a></li>
+        <li><a href="#contact">Contact</a></li>
     </ul>
+</nav>
+
+<header class="hero">
+
+    <div class="hero-text">
+
+        <h1>Laura Bertin</h1>
+
+        <h2>Data Analyst</h2>
+
+        <p>
+            Je transforme les données en informations utiles grâce à Python,
+            SQL et Power BI.
+        </p>
+
+        <div class="buttons">
+
+            <a href="#projects" class="btn-primary">
+                Voir mes projets
+            </a>
+
+            <a href="assets/cv.pdf" class="btn-secondary">
+                Télécharger mon CV
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="hero-image">
+
+        <img src="assets/photo.jpg" alt="Laura Bertin">
+
+    </div>
+
+</header>
+
+<section id="about">
+
+<h2>À propos</h2>
+
+<p>
+
+Passionnée par l'analyse de données, j'aime transformer des données complexes en
+visualisations claires afin d'aider à la prise de décision.
+
+</p>
+
 </section>
 
-<section id="projets">
-    <h2>Mes projets</h2>
+<section id="skills">
 
-    <p>Bientôt disponibles…</p>
+<h2>Compétences</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Python</h3>
+<p>Pandas • NumPy • Matplotlib</p>
+</div>
+
+<div class="card">
+<h3>SQL</h3>
+<p>SQLite • Requêtes • Bases de données</p>
+</div>
+
+<div class="card">
+<h3>Power BI</h3>
+<p>Dashboards • KPI • Visualisation</p>
+</div>
+
+</div>
+
 </section>
 
-<footer>
-    <p>© 2026 Laura Bertin</p>
+<section id="projects">
+
+<h2>Mes projets</h2>
+
+<div class="cards">
+
+<div class="card">
+<h3>Analyse des ventes</h3>
+<p>Python • SQLite • Power BI</p>
+</div>
+
+<div class="card">
+<h3>Dashboard RH</h3>
+<p>Power BI</p>
+</div>
+
+<div class="card">
+<h3>Analyse Netflix</h3>
+<p>Python</p>
+</div>
+
+</div>
+
+</section>
+
+<footer id="contact">
+
+<h2>Contact</h2>
+
+<p>📧 ton.email@mail.com</p>
+
+<p>GitHub | LinkedIn</p>
+
 </footer>
 
+<script src="script.js"></script>
+
 </body>
+
 </html>
