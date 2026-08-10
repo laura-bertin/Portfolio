@@ -375,3 +375,25 @@ footer {
         grid-template-columns: 1fr;
     }
 }
+
+
+/* Style pour la capture d'écran des projets */
+.project-media {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.project-img {
+    width: 100%;
+    max-width: 900px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e7eb;
+}
+
+.img-caption {
+    font-size: 13px !important;
+    color: #6b7280 !important;
+    margin-top: 10px;
+    font-style: italic;
+}
