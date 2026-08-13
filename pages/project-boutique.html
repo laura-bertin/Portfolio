@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nettoyage des données de stock d'une boutique | Laura Bertin</title>
+
+    <link rel="stylesheet" href="../style.css">
+
+    <!-- Police Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ===== Navigation ===== -->
+
+    <nav>
+
+        <div class="logo"><a href="../index.html" style="text-decoration:none; color:inherit;">Portfolio</a></div>
+
+        <ul>
+            <li><a href="../index.html#about">À propos</a></li>
+            <li><a href="../index.html#skills">Compétences</a></li>
+            <li><a href="../index.html#projects">Projets</a></li>
+            <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+
+    </nav>
+
+    <!-- ===== En-tête Projet ===== -->
+
+    <header class="project-header">
+
+        <a href="../index.html#projects" class="back-link">← Retour aux projets</a>
+
+        <div class="project-title-area">
+            <span class="badge formation">OpenClassrooms</span>
+            <h1>Nettoyage des données de stock (Bottleneck)</h1>
+            <p class="subtitle">Rapprochement de bases de données hétérogènes (ERP & Web), détection d'anomalies, analyse statistique des prix et calcul d'indicateurs de vente sous Python (Pandas/Seaborn).</p>
+        </div>
+
+    </header>
+
+    <!-- ===== Contenu Détaillé du Projet ===== -->
+
+    <main class="project-detail-container">
+
+        <!-- Barres d'informations latérales -->
+        <aside class="project-sidebar">
+
+            <div class="sidebar-card">
+                <h3>Fiche projet</h3>
+                <ul>
+                    <li><strong>Rôle :</strong> Data Analyst</li>
+                    <li><strong>Entreprise :</strong> Bottleneck (Boutique de vin)</li>
+                    <li><strong>Sources :</strong> Extraction ERP, Extraction Web (WooCommerce), Table de liaison</li>
+                    <li><strong>Volume :</strong> 825 références ERP, 1513 lignes liaison, 825 lignes Web</li>
+                    <li><strong>Objectif :</strong> Consolider le catalogue, analyser le CA et détecter les prix aberrants</li>
+                </ul>
+            </div>
+
+            <div class="sidebar-card">
+                <h3>Technologies & Outils</h3>
+                <div class="tech-tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">Jupyter Notebook</span>
+                    <span class="tag">Pandas</span>
+                    <span class="tag">NumPy</span>
+                    <span class="tag">Matplotlib / Plotly</span>
+                    <span class="tag">Seaborn</span>
+                </div>
+            </div>
+
+        </aside>
+
+        <!-- Description principale -->
+        <article class="project-content">
+
+            <!-- Section Capture d'écran -->
+            <section class="project-section">
+                <h2>Visualisation & Détection des Outliers</h2>
+                <div class="project-media">
+                    <div class="project-gallery">
+                        <img src="../assets/boutique-screenshot1.jpg" alt="Boîte à moustaches et détection des outliers sur les prix" class="project-img">
+                        <img src="../assets/boutique-screenshot2.jpg" alt="Heatmap de corrélation prix, ventes et stocks" class="project-img">
+                    </div>
+                    <p class="img-caption">Analyse univariée de la distribution des prix (Boxplot / Z-Score) et matrice de corrélation entre prix, ventes et stocks.</p>
+                </div>
+            </section>
+
+            <section class="project-section">
+                <h2>Contexte & Phase 1 : Consolidation & Nettoyage</h2>
+                <p>
+                    La boutique en ligne de vins <strong>Bottleneck</strong> rencontre des difficultés pour analyser ses ventes en raison d'outils artisanaux et d'identifiants non synchronisés entre l'ERP interne (`product_id`) et la base de données du site web WooCommerce (`sku` / `id_web`).
+                    <br><br>
+                    La première phase a consisté à effectuer les jointures via la table de correspondance et à corriger plus de 8 types d'erreurs de données :
+                </p>
+                <ul class="impact-list" style="margin-top: 15px;">
+                    <li><strong>Incohérences de stock :</strong> Correction des statuts `stock_status` qui n'étaient pas synchronisés avec `stock_quantity` (ex. quantités nulles marquées "en stock").</li>
+                    <li><strong>Quantités négatives :</strong> Identification et nettoyage des valeurs de stock anormales.</li>
+                    <li><strong>Formats de clés SKU :</strong> Détection et filtrage des SKU invalides ou manquants (85 lignes vides filtrées sur la table web).</li>
+                    <li><strong>Mise en correspondance :</strong> Consolidation finale réussie révélant 91 produits ERP n'ayant pas encore d'équivalent en vente en ligne.</li>
+                </ul>
+            </section>
+
+            <section class="project-section">
+                <h2>Phase 2 : Analyses Métiers pour le CODIR</h2>
+                <div class="features-grid">
+
+                    <div class="feature-item">
+                        <h3>💶 Chiffre d'Affaires & Règle des 20/80</h3>
+                        <p>Calcul d'un CA total du site web de <strong>143 680 €</strong>. L'analyse Pareto révèle que 52,5 % des références génèrent 80 % du chiffre d'affaires global.</p>
+                    </div>
+
+                    <div class="feature-item">
+                        <h3>📊 Détection des Prix Aberrants (Z-Score & IQR)</h3>
+                        <p>Analyse de la distribution des prix via l'écart interquartile (seuil haut à 83,40 €) et le Z-Score (seuil à 114 €). Les 32 "outliers" détectés correspondent à des grands crus de luxe (ex. bouteille à 225 €) et non à des erreurs de saisie.</p>
+                    </div>
+
+                    <div class="feature-item">
+                        <h3>📦 Valorisation & Rotation des Stocks</h3>
+                        <p>Valorisation totale du stock disponible établie à <strong>298 627,66 €</strong> (17 822 unités). Identification des tops produits en sur-stock (jusqu'à 31 mois de stock pour certaines références haut de gamme).</p>
+                    </div>
+
+                    <div class="feature-item">
+                        <h3>📉 Analyse des Marges & Corrélations</h3>
+                        <p>Mise en évidence d'une très forte corrélation (0.98) entre prix d'achat et prix de vente. La matrice montre également une corrélation négative (-0.52) entre le prix et les volumes de vente, confirmant que les produits très chers se vendent en plus faibles quantités.</p>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="project-section">
+                <h2>Recommandations & Automatisation</h2>
+                <ul class="impact-list">
+                    <li><strong>Synchronisation des SI :</strong> Automatiser la table de liaison entre l'ERP et le CMS Web pour éliminer les SKU vides et les ruptures de suivi.</li>
+                    <li><strong>Gestion des Stocks Immobilisés :</strong> Mettre en place des campagnes de promotion ciblées sur les vins ayant plus de 12 mois de stock.</li>
+                    <li><strong>Pérennisation du Code :</strong> Export du dataset consolidé sous Excel et documentation du Notebook Python en vue d'alimenter les futurs tableaux de bord de Business Intelligence.</li>
+                </ul>
+            </section>
+
+        </article>
+
+    </main>
+
+    <!-- ===== Contact Footer ===== -->
+
+    <footer id="contact">
+
+        <h2>Me contacter</h2>
+
+        <p>
+            📧 bertin.laura@wanadoo.fr
+        </p>
+
+        <p>
+            GitHub • LinkedIn
+        </p>
+
+        <p style="margin-top:25px;">
+            © 2026 Laura Bertin
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
