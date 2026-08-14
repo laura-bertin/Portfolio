@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analyse & Valorisation du Marché Immobilier Parisien | Laura Bertin</title>
+
+    <link rel="stylesheet" href="../style.css">
+
+    <!-- Police Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- ===== Navigation ===== -->
+
+    <nav>
+
+        <div class="logo"><a href="../index.html" style="text-decoration:none; color:inherit;">Portfolio</a></div>
+
+        <ul>
+            <li><a href="../index.html#about">À propos</a></li>
+            <li><a href="../index.html#skills">Compétences</a></li>
+            <li><a href="../index.html#projects">Projets</a></li>
+            <li><a href="../index.html#contact">Contact</a></li>
+        </ul>
+
+    </nav>
+
+    <!-- ===== En-tête Projet ===== -->
+
+    <header class="project-header">
+
+        <a href="../index.html#projects" class="back-link">← Retour aux projets</a>
+
+        <div class="project-title-area">
+            <span class="badge formation">OpenClassrooms</span>
+            <h1>Analyse & Modélisation du marché immobilier parisien</h1>
+            <p class="subtitle">Analyse exploratoire des transactions, régression linéaire pour la valorisation du portefeuille et classification non supervisée (K-Means) pour l'identification automatique de la nature des biens.</p>
+        </div>
+
+    </header>
+
+    <!-- ===== Contenu Détaillé du Projet ===== -->
+
+    <main class="project-detail-container">
+
+        <!-- Barres d'informations latérales -->
+        <aside class="project-sidebar">
+
+            <div class="sidebar-card">
+                <h3>Fiche projet</h3>
+                <ul>
+                    <li><strong>Rôle :</strong> Data Analyst / Machine Learning</li>
+                    <li><strong>Client :</strong> Les Plus Beaux Logis de Paris</li>
+                    <li><strong>Données :</strong> Transactions DVF / Notariales (2017 - 2021)</li>
+                    <li><strong>Objectifs :</strong> Prédire les prix fonciers (< 10% d'erreur) et classifier automatiquement appartements vs locaux commerciaux</li>
+                </ul>
+            </div>
+
+            <div class="sidebar-card">
+                <h3>Technologies & Algorithmes</h3>
+                <div class="tech-tags">
+                    <span class="tag">Python</span>
+                    <span class="tag">Scikit-learn</span>
+                    <span class="tag">Régression Linéaire</span>
+                    <span class="tag">K-Means (Clustering)</span>
+                    <span class="tag">Pandas</span>
+                    <span class="tag">Matplotlib / Seaborn</span>
+                </div>
+            </div>
+
+        </aside>
+
+        <!-- Description principale -->
+        <article class="project-content">
+
+            <!-- Section Capture d'écran -->
+            <section class="project-section">
+                <h2>Aperçu des visualisations & modélisations</h2>
+                <div class="project-media">
+                    <div class="project-gallery">
+                        <img src="../assets/immobilier-screenshot1.jpg" alt="Évolution des prix au m² par arrondissement à Paris" class="project-img">
+                        <img src="../assets/immobilier-screenshot2.jpg" alt="Résultats de la régression et classification K-Means" class="project-img">
+                    </div>
+                    <p class="img-caption">Évolution temporelle des prix au m² par arrondissement (2017-2021) et matrice de classification des actifs.</p>
+                </div>
+            </section>
+
+            <section class="project-section">
+                <h2>Contexte & Problématique Métier</h2>
+                <p>
+                    L'entreprise <em>Les Plus Beaux Logis de Paris</em> acquiert des biens immobiliers au meilleur prix pour les valoriser et les revendre. 
+                    Dans un marché ultra-concurrentiel, deux enjeux majeurs ont été identifiés :
+                </p>
+                <ul class="impact-list" style="margin-top: 10px;">
+                    <li><strong>Valorisation automatique :</strong> Estimer avec précision la valeur vénale d'un portefeuille d'actifs au 31 décembre 2022.</li>
+                    <li><strong>Classification automatisée des opportunités :</strong> Identifier automatiquement si une offre entrante concerne un appartement de particulier ou un local commercial afin d'adapter immédiatement la stratégie d'achat sans enquête manuelle chronophage.</li>
+                </ul>
+            </section>
+
+            <section class="project-section">
+                <h2>Démarche Analytique & Modèles de Machine Learning</h2>
+                <div class="features-grid">
+
+                    <div class="feature-item">
+                        <h3>1. Analyse Exploratoire & Corrélations</h3>
+                        <p>Étude de l'évolution des prix au m² entre 2017 et 2021. Validation statistique des corrélations de Pearson : relation très forte entre la surface et la valeur foncière (r = 0.98), et hausse temporelle confirmée sur le 6ᵉ arrondissement (r = 0.77).</p>
+                    </div>
+
+                    <div class="feature-item">
+                        <h3>2. Feature Engineering & Préparation</h3>
+                        <p>Encodage one-hot (get_dummies) des arrondissements et des types de locaux, conversion des dates en timestamps, suppression des valeurs aberrantes et découpage train/test (66% / 33%).</p>
+                    </div>
+
+                    <div class="feature-item">
+                        <h3>3. Prédiction des Prix (Régression Linéaire)</h3>
+                        <p>Entraînement d'un modèle de régression linéaire sous Scikit-learn atteignant une <strong>erreur absolue moyenne de 9,53 %</strong> (objectif contractuel < 10% validé). Valorisation estimée à 71,05 M€ pour les particuliers et 97,97 M€ pour le segment corporate.</p>
+                    </div>
+
+                    <div class="feature-item">
+                        <h3>4. Classification Non Supervisée (K-Means)</h3>
+                        <p>Déploiement de l'algorithme K-Means (k=2) basé sur le prix au m² pour labelliser automatiquement les opportunités entrantes en « Appartement » ou « Local commercial » sans intervention humaine.</p>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="project-section">
+                <h2>Bénéfices Métiers & Perspectives</h2>
+                <ul class="impact-list">
+                    <li><strong>Gain de réactivité :</strong> Suppression du travail d'enquête téléphonique préliminaire grâce à la labellisation automatique des opportunités.</li>
+                    <li><strong>Fiabilité budgétaire :</strong> Modèle de valorisation robuste sous le seuil des 10 % d'erreur pour les arbitrages d'investissement.</li>
+                    <li><strong>Pistes d'amélioration :</strong> Intégrer des variables contextuelles supplémentaires (étage, présence d'extérieur/balcon, proximité des transports et indices de rénovation énergétique).</li>
+                </ul>
+            </section>
+
+        </article>
+
+    </main>
+
+    <!-- ===== Contact Footer ===== -->
+
+    <footer id="contact">
+
+        <h2>Me contacter</h2>
+
+        <p>
+            📧 bertin.laura@wanadoo.fr
+        </p>
+
+        <p>
+            GitHub • LinkedIn
+        </p>
+
+        <p style="margin-top:25px;">
+            © 2026 Laura Bertin
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
