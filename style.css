@@ -520,8 +520,8 @@ footer h2 {
 
 .img-zoom-lens {
     position: absolute;
-    width: 2800px;
-    height: 2800px;
+    width: 1500px;
+    height: 1500px;
     border-radius: 50%;
     border: 3px solid #60a5fa;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.8), inset 0 0 15px rgba(0, 0, 0, 0.4);
