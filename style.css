@@ -475,3 +475,31 @@ footer h2 {
         grid-template-columns: 1fr;
     }
 }
+
+/* ==========================================
+   ZOOM AU SURVOL DES IMAGES (HOVER EFFECT)
+   ========================================== */
+
+/* Conteneur pour masquer le débordement lors du zoom */
+.project-media, 
+.project-gallery, 
+.hero-image {
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+/* Style et transition sur l'image */
+.project-img,
+.hero-image img {
+    cursor: zoom-in;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), filter 0.3s ease;
+    display: block;
+}
+
+/* Agrandissement au passage de la souris */
+.project-img:hover,
+.hero-image img:hover {
+    transform: scale(1.08); /* Niveau de zoom réglable (1.05 à 1.15) */
+    filter: brightness(1.03);
+    z-index: 10;
+}
