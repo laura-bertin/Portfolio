@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const zoomLevel = 2.5; // Grossissement (2.5 = 250%)
+    const zoomLevel = 1.5; // Grossissement (2.5 = 250%)
 
     document.querySelectorAll(".project-img").forEach((img) => {
         // 1. Envelopper l'image dans un conteneur relatif si absent
