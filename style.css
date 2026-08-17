@@ -364,7 +364,7 @@ section h2 {
     color: #cbd5e1;
 }
 
-/* Galerie & Visuels */
+/* Galerie & Visuels
 .project-media {
     margin: 20px 0;
     text-align: center;
@@ -390,7 +390,7 @@ section h2 {
     margin-top: 10px;
     font-style: italic;
 }
-
+ */
 /* Grille des fonctionnalités */
 .features-grid {
     display: grid;
