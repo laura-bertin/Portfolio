@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const zoomLevel = 2.5; // Niveau de grossissement réglable (2.0 = 200%, 3.0 = 300%)
+    const zoomLevel = 2.5; // Grossissement (2.5 = 250%)
 
     document.querySelectorAll(".project-img").forEach((img) => {
-        // 1. Envelopper l'image si ce n'est pas déjà fait
+        // 1. Envelopper l'image dans un conteneur relatif si absent
         let container = img.parentElement;
         if (!container.classList.contains("img-zoom-container")) {
             container = document.createElement("div");
@@ -19,39 +19,36 @@ document.addEventListener("DOMContentLoaded", () => {
         function moveLens(e) {
             e.preventDefault();
             const rect = img.getBoundingClientRect();
-            
-            // Position de la souris par rapport à l'image
-            let x = e.clientX - rect.left;
-            let y = e.clientY - rect.top;
 
-            // Dimensions de la bulle
+            // Position du curseur par rapport à l'image affichée
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
             const lensRadius = lens.offsetWidth / 2;
 
-            // Empêcher la lentille de sortir de l'image
-            if (x > img.width) x = img.width;
-            if (x < 0) x = 0;
-            if (y > img.height) y = img.height;
-            if (y < 0) y = 0;
+            // Dimensions de l'image affichée
+            const imgWidth = img.clientWidth;
+            const imgHeight = img.clientHeight;
 
-            // Positionnement centré sur le curseur
+            // Positionnement de la bulle
             lens.style.left = (x - lensRadius) + "px";
             lens.style.top = (y - lensRadius) + "px";
 
-            // Mise à jour de l'image zoomée à l'intérieur de la bulle
+            // Calcul du fond zoomé
             lens.style.backgroundImage = `url('${img.src}')`;
-            lens.style.backgroundSize = (img.width * zoomLevel) + "px " + (img.height * zoomLevel) + "px";
+            lens.style.backgroundSize = `${imgWidth * zoomLevel}px ${imgHeight * zoomLevel}px`;
             lens.style.backgroundPosition = `-${(x * zoomLevel) - lensRadius}px -${(y * zoomLevel) - lensRadius}px`;
         }
 
-        // Événements d'affichage et de suivi
-        img.addEventListener("mouseenter", () => {
+        // Affichage au survol
+        container.addEventListener("mouseenter", () => {
             lens.style.display = "block";
         });
 
-        img.addEventListener("mouseleave", () => {
+        container.addEventListener("mouseleave", () => {
             lens.style.display = "none";
         });
 
-        img.addEventListener("mousemove", moveLens);
+        container.addEventListener("mousemove", moveLens);
     });
 });
