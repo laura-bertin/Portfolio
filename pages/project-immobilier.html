@@ -53,10 +53,10 @@
             <div class="sidebar-card">
                 <h3>Fiche projet</h3>
                 <ul>
-                    <li><strong>Rôle :</strong> Data Analyst / Machine Learning</li>
-                    <li><strong>Client :</strong> Les Plus Beaux Logis de Paris</li>
-                    <li><strong>Données :</strong> Transactions DVF / Notariales (2017 - 2021)</li>
-                    <li><strong>Objectifs :</strong> Prédire les prix fonciers (< 10% d'erreur) et classifier automatiquement appartements vs locaux commerciaux</li>
+                    <li><strong>Rôle :</strong> Data Analyst / Machine Learning[cite: 6]</li>
+                    <li><strong>Client :</strong> Les Plus Beaux Logis de Paris[cite: 6]</li>
+                    <li><strong>Données :</strong> Transactions DVF / Notariales (2017 - 2021)[cite: 6]</li>
+                    <li><strong>Objectifs :</strong> Prédire les prix fonciers (&lt; 10% d'erreur) et classifier automatiquement appartements vs locaux commerciaux[cite: 6]</li>
                 </ul>
             </div>
 
@@ -95,8 +95,8 @@
                     Dans un marché ultra-concurrentiel, deux enjeux majeurs ont été identifiés :
                 </p>
                 <ul class="impact-list" style="margin-top: 10px;">
-                    <li><strong>Valorisation automatique :</strong> Estimer avec précision la valeur vénale d'un portefeuille d'actifs au 31 décembre 2022.</li>
-                    <li><strong>Classification automatisée des opportunités :</strong> Identifier automatiquement si une offre entrante concerne un appartement de particulier ou un local commercial afin d'adapter immédiatement la stratégie d'achat sans enquête manuelle chronophage.</li>
+                    <li><strong>Valorisation automatique :</strong> Estimer avec précision la valeur vénale d'un portefeuille d'actifs au 31 décembre 2022.[cite: 6]</li>
+                    <li><strong>Classification automatisée des opportunités :</strong> Identifier automatiquement si une offre entrante concerne un appartement de particulier ou un local commercial afin d'adapter immédiatement la stratégie d'achat sans enquête manuelle chronophage.[cite: 6]</li>
                 </ul>
             </section>
 
@@ -106,22 +106,22 @@
 
                     <div class="feature-item">
                         <h3>1. Analyse Exploratoire & Corrélations</h3>
-                        <p>Étude de l'évolution des prix au m² entre 2017 et 2021. Validation statistique des corrélations de Pearson : relation très forte entre la surface et la valeur foncière (r = 0.98), et hausse temporelle confirmée sur le 6ᵉ arrondissement (r = 0.77).</p>
+                        <p>Étude de l'évolution des prix au m² entre 2017 et 2021[cite: 6]. Validation statistique des corrélations de Pearson : relation très forte entre la surface et la valeur foncière (r = 0.98), et hausse temporelle confirmée sur le 6ᵉ arrondissement (r = 0.77)[cite: 6].</p>
                     </div>
 
                     <div class="feature-item">
                         <h3>2. Feature Engineering & Préparation</h3>
-                        <p>Encodage one-hot (get_dummies) des arrondissements et des types de locaux, conversion des dates en timestamps, suppression des valeurs aberrantes et découpage train/test (66% / 33%).</p>
+                        <p>Encodage one-hot (get_dummies) des arrondissements et des types de locaux, conversion des dates en timestamps, suppression des valeurs aberrantes et découpage train/test (66% / 33%)[cite: 6].</p>
                     </div>
 
                     <div class="feature-item">
                         <h3>3. Prédiction des Prix (Régression Linéaire)</h3>
-                        <p>Entraînement d'un modèle de régression linéaire sous Scikit-learn atteignant une <strong>erreur absolue moyenne de 9,53 %</strong> (objectif contractuel < 10% validé). Valorisation estimée à 71,05 M€ pour les particuliers et 97,97 M€ pour le segment corporate.</p>
+                        <p>Entraînement d'un modèle de régression linéaire sous Scikit-learn atteignant une <strong>erreur absolue moyenne de 9,53 %</strong> (objectif contractuel &lt; 10% validé)[cite: 6]. Valorisation estimée à 71,05 M€ pour les particuliers et 97,97 M€ pour le segment corporate[cite: 6].</p>
                     </div>
 
                     <div class="feature-item">
                         <h3>4. Classification Non Supervisée (K-Means)</h3>
-                        <p>Déploiement de l'algorithme K-Means (k=2) basé sur le prix au m² pour labelliser automatiquement les opportunités entrantes en « Appartement » ou « Local commercial » sans intervention humaine.</p>
+                        <p>Déploiement de l'algorithme K-Means (k=2) basé sur le prix au m² pour labelliser automatiquement les opportunités entrantes en « Appartement » ou « Local commercial » sans intervention humaine[cite: 6].</p>
                     </div>
 
                 </div>
@@ -131,8 +131,8 @@
                 <h2>Bénéfices Métiers & Perspectives</h2>
                 <ul class="impact-list">
                     <li><strong>Gain de réactivité :</strong> Suppression du travail d'enquête téléphonique préliminaire grâce à la labellisation automatique des opportunités.</li>
-                    <li><strong>Fiabilité budgétaire :</strong> Modèle de valorisation robuste sous le seuil des 10 % d'erreur pour les arbitrages d'investissement.</li>
-                    <li><strong>Pistes d'amélioration :</strong> Intégrer des variables contextuelles supplémentaires (étage, présence d'extérieur/balcon, proximité des transports et indices de rénovation énergétique).</li>
+                    <li><strong>Fiabilité budgétaire :</strong> Modèle de valorisation robuste sous le seuil des 10 % d'erreur pour les arbitrages d'investissement.[cite: 6]</li>
+                    <li><strong>Pistes d'amélioration :</strong> Intégrer des variables contextuelles supplémentaires (étage, présence d'extérieur/balcon, proximité des transports et indices de rénovation énergétique).[cite: 6]</li>
                 </ul>
             </section>
 
@@ -159,6 +159,8 @@
         </p>
 
     </footer>
+
+    <script src="../script.js"></script>
 
 </body>
 
