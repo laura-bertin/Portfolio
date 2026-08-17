@@ -477,29 +477,45 @@ footer h2 {
 }
 
 /* ==========================================
-   ZOOM AU SURVOL DES IMAGES (HOVER EFFECT)
+   LOUPE / BULLE DE ZOOM AU SURVOL
    ========================================== */
 
-/* Conteneur pour masquer le débordement lors du zoom */
-.project-media, 
-.project-gallery, 
-.hero-image {
-    overflow: hidden;
+.project-media,
+.project-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+}
+
+/* Conteneur de positionnement pour chaque image */
+.img-zoom-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
     border-radius: 12px;
 }
 
-/* Style et transition sur l'image */
-.project-img,
-.hero-image img {
-    cursor: zoom-in;
-    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), filter 0.3s ease;
+.project-img {
+    width: 100%;
     display: block;
+    border-radius: 12px;
+    border: 1px solid #334155;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    cursor: crosshair;
 }
 
-/* Agrandissement au passage de la souris */
-.project-img:hover,
-.hero-image img:hover {
-    transform: scale(1.08); /* Niveau de zoom réglable (1.05 à 1.15) */
-    filter: brightness(1.03);
-    z-index: 10;
+/* La lentille / bulle grossissante qui suit le curseur */
+.img-zoom-lens {
+    position: absolute;
+    border: 3px solid #60a5fa;
+    border-radius: 50%; /* Bulle circulaire */
+    cursor: crosshair;
+    width: 180px;       /* Taille de la bulle */
+    height: 180px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7), inset 0 0 15px rgba(0, 0, 0, 0.3);
+    background-repeat: no-repeat;
+    pointer-events: none; /* Empêche le clignotement de la souris */
+    display: none;        /* Cachée par défaut */
+    z-index: 999;
 }
