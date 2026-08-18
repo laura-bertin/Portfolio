@@ -20,25 +20,33 @@ document.addEventListener("DOMContentLoaded", () => {
             e.preventDefault();
             const rect = img.getBoundingClientRect();
 
-            // Position du curseur par rapport à l'image affichée
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
+            let x = e.clientX - rect.left;
+            let y = e.clientY - rect.top;
 
-            const lensRadius = lens.offsetWidth / 2;
+            const lensWidth = lens.offsetWidth;
+            const lensHeight = lens.offsetHeight;
 
-            // Dimensions de l'image affichée
             const imgWidth = img.clientWidth;
             const imgHeight = img.clientHeight;
 
-            // Positionnement de la bulle
-            lens.style.left = (x - lensRadius) + "px";
-            lens.style.top = (y - lensRadius) + "px";
+            // Empêche le curseur "virtuel" de sortir des limites de l'image
+            x = Math.max(0, Math.min(x, imgWidth));
+            y = Math.max(0, Math.min(y, imgHeight));
 
-            // Calcul du fond zoomé
+            // Empêche la bulle elle-même de dépasser les bords de l'image
+            let lensX = x - lensWidth / 2;
+            let lensY = y - lensHeight / 2;
+            lensX = Math.max(0, Math.min(lensX, imgWidth - lensWidth));
+            lensY = Math.max(0, Math.min(lensY, imgHeight - lensHeight));
+
+            lens.style.left = lensX + "px";
+            lens.style.top = lensY + "px";
+
             lens.style.backgroundImage = `url('${img.src}')`;
             lens.style.backgroundSize = `${imgWidth * zoomLevel}px ${imgHeight * zoomLevel}px`;
-            lens.style.backgroundPosition = `-${(x * zoomLevel) - lensRadius}px -${(y * zoomLevel) - lensRadius}px`;
-        }
+            lens.style.backgroundPosition = `-${(x * zoomLevel) - lensWidth / 2}px -${(y * zoomLevel) - lensHeight / 2}px`;
+            }
+                
 
         // Affichage au survol
         container.addEventListener("mouseenter", () => {
