@@ -484,17 +484,13 @@ footer h2 {
     margin: 25px 0;
     width: 100%;
 }
-
 .project-gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 25px;
     width: 100%;
+    align-items: start;   /* empêche l'étirement vertical des cellules */
 }
-
-/* ==========================================
-   ZOOM SUR IMAGE ENTIÈRE (SANS BULLE)
-   ========================================== */
 
 .img-zoom-container {
     position: relative;
@@ -502,9 +498,9 @@ footer h2 {
     max-width: 750px;
     margin: 0 auto;
     border-radius: 12px;
-    overflow: hidden; /* empêche l'image zoomée de déborder du cadre */
+    overflow: hidden;
+    height: auto;         /* force le wrapper à s'ajuster au contenu réel */
 }
-
 .project-img {
     width: 100%;
     max-height: 480px;
