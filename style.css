@@ -492,41 +492,20 @@ footer h2 {
     width: 100%;
 }
 
-/* Conteneur de chaque image */
+/* ==========================================
+   ZOOM SUR IMAGE ENTIÈRE (SANS BULLE)
+   ========================================== */
+
 .img-zoom-container {
     position: relative;
     width: 100%;
-    max-width: 750px; /* Empêche l'image d'être gigantesque */
+    max-width: 750px;
     margin: 0 auto;
     border-radius: 12px;
+    overflow: hidden; /* empêche l'image zoomée de déborder du cadre */
 }
 
-/* Image principale ajustée */
 .project-img {
-    width: 100%;
-    max-height: 480px;  /* Hauteur max pour voir l'image entière sans scroll */
-    object-fit: contain; /* Conserve le ratio sans déformer */
-    display: block;
-    border-radius: 12px;
-    border: 1px solid #334155;
-    background: #0b1120;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-    cursor: crosshair;
-}
-
-/* ==========================================
-   BULLE / LOUPE FLOTTANTE (AU-DESSUS DU SITE)
-   ========================================== */
-
-.img-zoom-lens {
-    position: absolute;
-    width: 600px;
-    height: 500px;
-    border-radius: 8%;
-    border: 3px solid #60a5fa;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.8), inset 0 0 15px rgba(0, 0, 0, 0.4);
-    background-repeat: no-repeat;
-    pointer-events: none; /* Ne bloque pas les mouvements de la souris */
-    display: none;
-    z-index: 1000;
+    transition: transform 0.1s ease-out;
+    cursor: zoom-in;
 }
